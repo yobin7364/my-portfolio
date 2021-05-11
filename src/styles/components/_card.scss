@@ -1,0 +1,27 @@
+.introduction {
+  position: relative;
+  top: -20rem;
+  padding: 9rem 1.5rem;
+  padding-bottom: 20rem;
+  background-color: $color-primary;
+  color: white;
+  &__center {
+    width: 60%;
+    margin: 0 auto;
+  }
+  &__title {
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Tienne", serif;
+    text-align: center;
+  }
+
+  &__description {
+    padding: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+}

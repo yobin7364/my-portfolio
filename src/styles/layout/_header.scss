@@ -1,0 +1,46 @@
+.head-section {
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 6rem;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  &__title {
+    padding: 1rem;
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: "Tienne", serif;
+  }
+
+  &__description {
+    padding: 1rem;
+    font-weight: 300;
+    font-size: 3rem;
+  }
+}
+
+.my-image {
+  margin-top: 6rem;
+  width: 26rem;
+  border-radius: 50%;
+}
+
+.hat {
+  padding: 1rem;
+  width: 86rem;
+  position: relative;
+  left: 10rem;
+  top: -9rem;
+}

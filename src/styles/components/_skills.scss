@@ -1,0 +1,132 @@
+.skills {
+  position: relative;
+  top: -40rem;
+
+  &__logo {
+    width: 12rem;
+  }
+
+  &__header {
+    font-family: "Tienne", serif;
+    color: black;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 3rem;
+    color: black;
+  }
+
+  &__description {
+    margin: 1rem;
+    color: black;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+
+  &__header-medium {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+.box {
+  background-color: white;
+  margin: 3rem;
+  border: 1px solid #e6ecf8;
+  box-shadow: 0 5px 5px 0 #e6ecf8;
+  border-radius: 2rem;
+  display: flex;
+  //   flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 5rem;
+  &:not(:last-child) {
+    border-right: 1px solid #e6ecf8;
+  }
+}
+
+.domian {
+  padding: 1rem;
+  text-align: center;
+}
+
+.area {
+  padding: 2rem;
+  text-align: center;
+}
+
+.tolls {
+  padding: 1rem;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.work {
+  padding: 2rem;
+  color: black;
+  position: relative;
+  //margin-top instead of top to avoid unwanted bottom space
+  margin-top: -20rem;
+  margin-bottom: 20rem;
+  display: flex;
+  justify-content: center;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem;
+  }
+
+  &__second-title {
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 0 5rem;
+  }
+}
+
+.card {
+  border: 1px solid #e6ecf8;
+  box-shadow: 0 5px 5px 0 #e6ecf8;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem;
+
+  &__image {
+    margin: 1rem;
+    width: 15rem;
+  }
+
+  &__description {
+    margin: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__link {
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-primary;
+    text-decoration: none;
+  }
+}
+
+.flex-grid {
+  display: flex;
+}
+.col {
+  max-width: 40rem;
+  flex: 1;
+  padding: 1rem;
+}

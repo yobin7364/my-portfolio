@@ -1,0 +1,26 @@
+.contact-button {
+  padding: 0.2rem 1.2rem;
+  text-decoration: none;
+  font-size: 2rem;
+  color: $color-primary;
+  border: 3px solid $color-primary;
+  border-radius: 3.2rem;
+  transition: all 0.7s;
+  &:hover {
+    color: white;
+    background-color: $color-primary;
+  }
+}
+
+.start-project__link {
+  padding: 0.2rem 1.2rem;
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+  border: 3px solid $color-primary;
+  border-radius: 3.2rem;
+  transition: all 0.7s;
+  &:hover {
+    background-color: $color-primary;
+  }
+}

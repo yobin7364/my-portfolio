@@ -6,7 +6,9 @@ import hat from "../image/hat.png";
 import designer from "../image/Designer.png";
 import frontEndDevelopment from "../image/Front-end-development.png";
 import backEndDevelopment from "../image/Back-end-development.png";
+import whiteLogo from "../image/White-Logo.png";
 import cephasLogo from "../image/CephasLogo.png";
+import { SocialIcon } from 'react-social-icons';
 
 export const Home = () => {
     const date = new Date().getFullYear();
@@ -239,9 +241,6 @@ export const Home = () => {
                             </div>
                         </div>
 
-                    </div>
-
-                    <div className="flex-grid">
 
                         <div className="col">
                             <div className="card">
@@ -259,6 +258,7 @@ export const Home = () => {
                                 >
                                     www.ggogle.com </a>
                             </div>
+
                         </div>
 
                         <div className="col">
@@ -278,9 +278,9 @@ export const Home = () => {
                                     www.google.com </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
+
             </section>
 
             <footer className="footer">
@@ -295,6 +295,28 @@ export const Home = () => {
                         </h2>
 
                         <Link to="/" className="start-project__link">Let's do this</Link>
+                    </div>
+
+                    <div className="footer-container">
+                        <img
+                            src={whiteLogo}
+                            alt="Yobin Kumar Pun"
+                            className="footer-container__logo"
+                        />
+                        <h3 className="footer-container__quote">
+                            Code, learn &amp; thrive in life
+                            with one step at a time.
+                        </h3>
+
+                        <div className="footer-container__social-icons-list">
+                            <SocialIcon url="https://www.facebook.com/pun.yobinkumar/" className="footer-container__icons" target="_blank" fgColor="#fff" style={{ height: 40, width: 40 }} />
+                            <SocialIcon url="https://twitter.com/yobin00" className="footer-container__icons" target="_blank" fgColor="#fff" style={{ height: 40, width: 40 }} />
+                            <SocialIcon url="https://www.instagram.com/yobin95/" className="footer-container__icons" target="_blank" fgColor="#fff" style={{ height: 40, width: 40 }} />
+                        </div>
+
+                        <div className="creator">
+                            Handcrafted by me.
+                        </div>
                     </div>
                 </div>
             </footer>

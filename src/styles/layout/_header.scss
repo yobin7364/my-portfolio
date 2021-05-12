@@ -18,14 +18,14 @@
   color: black;
 
   &__title {
-    padding: 1rem;
+    padding: 2rem;
     font-size: 5rem;
     font-weight: 700;
     font-family: "Tienne", serif;
   }
 
   &__description {
-    padding: 1rem;
+    padding: 2rem;
     font-weight: 300;
     font-size: 3rem;
   }
@@ -35,12 +35,42 @@
   margin-top: 6rem;
   width: 26rem;
   border-radius: 50%;
+
+  @media only screen and (max-width: $size-largest-medium) {
+    width: 20rem;
+  }
 }
 
 .hat {
   padding: 1rem;
-  width: 86rem;
+  max-width: 86rem;
   position: relative;
   left: 10rem;
   top: -9rem;
+
+  @media only screen and (max-width: $size-largest-medium) {
+    max-width: 74rem;
+    margin-bottom: 2rem;
+  }
+
+  @media only screen and (max-width: $size-largest-small) {
+    left: 6rem;
+  }
+
+  @media only screen and (max-width: $size-medium-small) {
+    max-width: 50rem;
+    left: 0;
+    margin-bottom: 5rem;
+  }
+
+  @media only screen and (max-width: $size-small) {
+    max-width: 40rem;
+    margin-top: 2rem;
+  }
+
+  @media only screen and (max-width: $size-small-medium) {
+    // max-width: 30rem;
+    // left: -1rem;
+    // margin-bottom: 4rem;
+  }
 }

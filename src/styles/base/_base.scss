@@ -1,4 +1,10 @@
-// $size-largest: 90em; // 900/16 = 56.25em
+$size-largest: 78.5em; // 1256px
+$size-largest-medium: 65.9375em; // 1055/16 = 56.25em
+$size-largest-small: 60.4375em; // 967
+$size-medium: 55.8125em; // 893
+$size-medium-small: 42.4375em; // 679
+$size-small: 29.3125em; // 469
+$size-small-medium: 22.5625em; // 361
 
 * {
   margin: 0;
@@ -15,22 +21,20 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 
-  // @media only screen and (max-width: $size-largest) {
-  //   font-size: 70%; // rem take this px size, here it is 8px and 1rem =  8px
-  // }
+  //styles applied below this size
 
-  // @media only screen and (max-width: $size-large) {
-  //   font-size: 55%;
-  // }
+  @media only screen and (max-width: $size-largest-small) {
+    font-size: 50%; // rem take this px size, here it is 8px and 1rem =  8px
+  }
 
-  // @media only screen and (max-width: $size-large-medium) {
+  // @media only screen and (max-width: $size-medium-small) {
   //   font-size: 40%;
   // }
 }
 
 body {
   //Use Open Sans or sans-serif
-  font-family: 'Palanquin', sans-serif;
+  font-family: "Palanquin", sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: $color-primary;

@@ -7,7 +7,8 @@
 }
 
 .logo {
-  width: 6rem;
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 .header-info {
@@ -34,22 +35,26 @@
 .my-image {
   margin-top: 6rem;
   width: 26rem;
+  height: 26rem;
   border-radius: 50%;
 
   @media only screen and (max-width: $size-largest-medium) {
     width: 20rem;
+    height: 20rem;
   }
 }
 
 .hat {
   padding: 1rem;
   max-width: 86rem;
+  max-height: 86rem;
   position: relative;
   left: 10rem;
   top: -9rem;
 
   @media only screen and (max-width: $size-largest-medium) {
     max-width: 74rem;
+    max-height: 74rem;
     margin-bottom: 2rem;
   }
 
@@ -59,12 +64,14 @@
 
   @media only screen and (max-width: $size-medium-small) {
     max-width: 50rem;
+    max-height: 50rem;
     left: 0;
     margin-bottom: 5rem;
   }
 
   @media only screen and (max-width: $size-small) {
     max-width: 40rem;
+    max-height: 40rem;
     margin-top: 2rem;
   }
 

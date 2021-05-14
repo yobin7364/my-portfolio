@@ -309,9 +309,30 @@ export const Home = () => {
                         </h3>
 
                         <div className="footer-container__social-icons-list">
-                            <SocialIcon url="https://www.facebook.com/pun.yobinkumar/" className="footer-container__icons" target="_blank" fgColor="#fff" style={{ height: 40, width: 40 }} />
-                            <SocialIcon url="https://twitter.com/yobin00" className="footer-container__icons" target="_blank" fgColor="#fff" style={{ height: 40, width: 40 }} />
-                            <SocialIcon url="https://www.instagram.com/yobin95/" className="footer-container__icons" target="_blank" fgColor="#fff" style={{ height: 40, width: 40 }} />
+                            <SocialIcon
+                                url="https://www.facebook.com/pun.yobinkumar/"
+                                className="footer-container__icons"
+                                target="_blank"
+                                fgColor="#fff"
+                                style={{ height: 40, width: 40 }}
+                                rel="noopener noreferrer"
+                            />
+                            <SocialIcon
+                                url="https://twitter.com/yobin00"
+                                className="footer-container__icons"
+                                target="_blank"
+                                fgColor="#fff"
+                                style={{ height: 40, width: 40 }}
+                                rel="noopener noreferrer"
+                            />
+                            <SocialIcon
+                                url="https://www.instagram.com/yobin95/"
+                                className="footer-container__icons"
+                                target="_blank"
+                                fgColor="#fff"
+                                style={{ height: 40, width: 40 }}
+                                rel="noopener noreferrer"
+                            />
                         </div>
 
                         <div className="creator">

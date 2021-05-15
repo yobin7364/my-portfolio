@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import logo from "../image/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import myImage from "../image/my-image.png";
 import { useForm } from "react-hook-form";
 import { Link, withRouter } from "react-router-dom";
+import {send} from 'emailjs-com';
+import apikeys from "../apikeys";
+import { Helmet } from 'react-helmet'
+import Loader from "react-loader-spinner";
 
 interface FormValuesInterface {
     name: string,
@@ -20,11 +24,48 @@ type FormValues = {
 
 
 const ContactForm = (props:any) => {
-    const { register, handleSubmit } = useForm<FormValues>();
-    const onSubmit = (data:FormValuesInterface) => console.log(data);
+    const { register, handleSubmit, reset } = useForm<FormValues>();
+    const [loading,setLoading] = useState(false);
+    const [success,setSuccess] = useState(false);
+    const [sending,setSending] = useState(false);
+
+    const onSubmit=(data:any)=>{
+        setLoading(true);
+        setSending(true);
+
+        send( apikeys.SERVICE_ID, apikeys.TEMPLATE_ID, data, apikeys.USER_ID)
+        .then(result => {
+        reset({
+            name:"",
+            email:"",
+            message:""
+        })
+        setLoading(false)
+        setSuccess(true)
+       
+        },
+        error => {
+            setLoading(false)
+        })
+
+        }
+
+        useEffect(() => {
+            if(success){
+                setTimeout(() => 
+                {
+                    props.history.push("/")
+                }
+               , 3000);
+            }
+        }, [success])
 
     return (
         <div>
+            <Helmet>
+                <title>Yobin Kumar Pun | Contact</title>
+            </Helmet>
+
             <nav className="border-bottom">
                 <div className="container">
                     <div className="head-section no-padding">
@@ -83,7 +124,35 @@ const ContactForm = (props:any) => {
                                 
                         </div>
 
+                        {loading && 
+                        <Loader
+                            type="Puff"
+                            color="#47A5A5"
+                            height={80}
+                            width={80}
+                        />
+                        }
+
+                        {
+                           !sending && !loading &&
                         <input className="contact-button pointer-button padding-medium margin-medium" type="submit" />
+                        }
+
+                        {/* success button when email is sent  */}
+                        {
+                           sending && success && !loading &&
+                            <button className="padding-medium margin-medium success" >
+                                Success !!!
+                            </button>
+                        }
+
+                        {/* Failed button when email is not sent  */}
+                        {
+                            sending &&  !success && !loading &&
+                            <button className="padding-medium margin-medium failed" >
+                                Failed !!!
+                            </button>
+                        }
                     </form>
                 </div>
             </section>

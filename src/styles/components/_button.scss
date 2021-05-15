@@ -34,3 +34,25 @@
     margin: 2rem;
   }
 }
+
+.success {
+  color: white;
+  background-color: rgb(80, 168, 80);
+  border: 3px solid rgb(80, 168, 80);
+
+  padding: 0.2rem 1.2rem;
+  text-decoration: none;
+  font-size: 2rem;
+  border-radius: 3.2rem;
+}
+
+.failed {
+  color: white;
+  background-color: rgb(197, 42, 42);
+  border: 3px solid rgb(197, 42, 42);
+
+  padding: 0.2rem 1.2rem;
+  text-decoration: none;
+  font-size: 2rem;
+  border-radius: 3.2rem;
+}

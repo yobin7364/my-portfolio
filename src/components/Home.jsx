@@ -21,7 +21,7 @@ export const Home = () => {
                 <div className="container">
                     <nav className="head-section">
                         <img src={logo} alt="Yobin Kumar Pun | Designer &amp; Web Developer" className="logo" />
-                        <Link to="/" className="contact-button">Contact Me</Link>
+                        <Link to="/contact" className="contact-button">Contact Me</Link>
                     </nav>
                     <section className="header-info">
                         <h1 className="header-info__title">Designer &amp; Web Developer</h1>
@@ -294,7 +294,7 @@ export const Home = () => {
                             a chat.
                         </h2>
 
-                        <Link to="/" className="start-project__link">Let's do this</Link>
+                        <Link to="/contact" className="start-project__link">Let's do this</Link>
                     </div>
 
                     <div className="footer-container">

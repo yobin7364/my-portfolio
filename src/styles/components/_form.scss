@@ -1,0 +1,81 @@
+.column-half-row {
+  display: flex;
+  width: 100%;
+  @media only screen and (max-width: $size-medium-small) {
+    flex-direction: column;
+  }
+}
+
+.column-half {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 50%;
+
+  @media only screen and (max-width: $size-medium-small) {
+    width: 100%;
+  }
+}
+
+.column-full-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 30rem 4rem;
+
+  @media only screen and (max-width: $size-largest-medium) {
+    margin: 0 14rem 4rem;
+  }
+
+  @media only screen and (max-width: $size-small) {
+    margin: 0 2rem 4rem;
+  }
+
+  .padding-medium {
+    padding: 1rem 5rem;
+  }
+
+  .margin-medium {
+    margin: 2rem;
+  }
+}
+
+.inputField {
+  width: 100%;
+  padding: 1rem;
+  font-weight: lighter;
+  font-size: 2rem;
+  border: 1px solid #c8cfdc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-title {
+  font-family: "Tienne", serif;
+  color: black;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 1rem 0;
+}
+
+.pointer-button {
+  cursor: pointer;
+  background-color: white;
+}
+
+.cross-button {
+  @media only screen and (max-width: $size-small) {
+    display: none;
+  }
+}

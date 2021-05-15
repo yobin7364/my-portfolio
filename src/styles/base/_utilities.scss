@@ -3,3 +3,9 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.line-height-small {
+  @media only screen and (max-width: $size-medium-small) {
+    line-height: 1.3 !important;
+  }
+}

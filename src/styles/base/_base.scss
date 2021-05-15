@@ -4,7 +4,6 @@ $size-largest-small: 60.4375em; // 967
 $size-medium: 55.8125em; // 893
 $size-medium-small: 42.4375em; // 679
 $size-small: 29.3125em; // 469
-$size-small-medium: 22.5625em; // 361
 
 * {
   margin: 0;
@@ -26,10 +25,6 @@ html {
   @media only screen and (max-width: $size-largest-small) {
     font-size: 50%; // rem take this px size, here it is 8px and 1rem =  8px
   }
-
-  // @media only screen and (max-width: $size-medium-small) {
-  //   font-size: 40%;
-  // }
 }
 
 body {

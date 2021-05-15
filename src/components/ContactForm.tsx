@@ -10,11 +10,7 @@ import apikeys from "../apikeys";
 import { Helmet } from 'react-helmet'
 import Loader from "react-loader-spinner";
 
-interface FormValuesInterface {
-    name: string,
-    email: string,
-    message: string
-  }
+console.log("ppro",apikeys)
 
 type FormValues = {
     name: string,
@@ -29,11 +25,12 @@ const ContactForm = (props:any) => {
     const [success,setSuccess] = useState(false);
     const [sending,setSending] = useState(false);
 
+
     const onSubmit=(data:any)=>{
         setLoading(true);
         setSending(true);
 
-        send( apikeys.SERVICE_ID, apikeys.TEMPLATE_ID, data, apikeys.USER_ID)
+        send( apikeys.SERVICE_ID!, apikeys.TEMPLATE_ID!, data, apikeys.USER_ID!)
         .then(result => {
         reset({
             name:"",

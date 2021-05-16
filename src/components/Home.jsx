@@ -17,7 +17,7 @@ function urlFor(source) {
     return builder.image(source)
 }
 
-console.log("key", process.env.REACT_APP_PROJECT_ID)
+
 
 export const Home = () => {
     const [workData, setWorkData] = useState(null);
@@ -36,6 +36,7 @@ export const Home = () => {
             .catch(console.error)
     }, [])
 
+    console.log("key", process.env.REACT_APP_PROJECT_ID)
 
     return (
         <div>

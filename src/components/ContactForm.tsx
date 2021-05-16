@@ -10,8 +10,6 @@ import apikeys from "../apikeys";
 import { Helmet } from 'react-helmet'
 import Loader from "react-loader-spinner";
 
-console.log("api keys",apikeys)
-
 type FormValues = {
     name: string,
     email: string,

@@ -10,7 +10,7 @@ import apikeys from "../apikeys";
 import { Helmet } from 'react-helmet'
 import Loader from "react-loader-spinner";
 
-console.log("ppro",apikeys)
+console.log("api keys",apikeys)
 
 type FormValues = {
     name: string,

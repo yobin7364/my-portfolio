@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../image/logo.png";
 import myImage from "../image/my-image.png";
@@ -9,11 +9,34 @@ import backEndDevelopment from "../image/Back-end-development.png";
 import whiteLogo from "../image/White-Logo.png";
 import cephasLogo from "../image/CephasLogo.png";
 import { SocialIcon } from 'react-social-icons';
+import sanityClient from "../client"
+import imageUrlBuilder from "@sanity/image-url"
+
+const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+    return builder.image(source)
+}
 
 export const Home = () => {
+    const [workData, setWorkData] = useState(null);
     const date = new Date().getFullYear();
 
     let years = date - 2018;
+
+    useEffect(() => {
+        sanityClient.fetch(`*[_type == "work"]{
+            logo,
+            description,
+            altTitle,
+            url
+        }`)
+            .then((data) => setWorkData(data))
+            .catch(console.error)
+    }, [])
+
+    console.log("data", workData)
+
 
     return (
         <div>
@@ -185,102 +208,40 @@ export const Home = () => {
                     <h1 className="work__title">My Recent Work</h1>
                     <h2 className="work__second-title">Here are few of my web app projects I’ve worked on recently.</h2>
 
-                    <div className="flex-grid">
-
-                        <div className="col">
-                            <div className="card">
-                                <img src={cephasLogo} alt="" className="card__image" />
-                                <p className="card__description">
-                                    Website for Cephas
-                                    Coopertive. Build with React
-                            and Sanity IO.</p>
-                                <a
-                                    target="_blank"
-                                    alt="Yobin Kumar Pun"
-                                    href="https://google.com"
-                                    rel="noopener noreferrer"
-                                    className="card__link"
-                                >
-                                    www.ggogle.com </a>
-                            </div>
-                        </div>
-
-                        <div className="col">
-                            <div className="card">
-                                <img src={cephasLogo} alt="" className="card__image" />
-                                <p className="card__description">
-                                    Website for Cephas
-                                    Coopertive. Build with React
-                            and Sanity IO.</p>
-                                <a
-                                    target="_blank"
-                                    alt="Yobin Kumar Pun"
-                                    href="https://google.com"
-                                    rel="noopener noreferrer"
-                                    className="card__link"
-                                >
-                                    www.ggogle.com </a>
-                            </div>
-                        </div>
-
-                        <div className="col">
-                            <div className="card">
-                                <img src={cephasLogo} alt="" className="card__image" />
-                                <p className="card__description">
-                                    Website for Cephas
-                                    Coopertive. Build with React
-                            and Sanity IO.</p>
-                                <a
-                                    target="_blank"
-                                    alt="Yobin Kumar Pun"
-                                    href="https://google.com"
-                                    rel="noopener noreferrer"
-                                    className="card__link"
-                                >
-                                    www.ggogle.com </a>
-                            </div>
-                        </div>
-
-
-                        <div className="col">
-                            <div className="card">
-                                <img src={cephasLogo} alt="" className="card__image" />
-                                <p className="card__description">
-                                    Website for Cephas
-                                    Coopertive. Build with React
-                            and Sanity IO.</p>
-                                <a
-                                    target="_blank"
-                                    alt="Yobin Kumar Pun"
-                                    href="https://google.com"
-                                    rel="noopener noreferrer"
-                                    className="card__link"
-                                >
-                                    www.ggogle.com </a>
-                            </div>
-
-                        </div>
-
-                        <div className="col">
-                            <div className="card">
-                                <img src={cephasLogo} alt="" className="card__image" />
-                                <p className="card__description">
-                                    Website for Cephas
-                                    Coopertive. Build with React
-                            and Sanity IO.</p>
-                                <a
-                                    target="_blank"
-                                    alt="Yobin Kumar Pun"
-                                    href="https://google.com"
-                                    rel="noopener noreferrer"
-                                    className="card__link"
-                                >
-                                    www.google.com </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
+            </section>
+
+            <section className="work-cards">
+                <div className="container">
+                    <div className="flex-grid">
+
+                        {
+                            workData?.map((work, indx) =>
+
+                                <div className="col" key={indx}>
+                                    <div className="card">
+                                        <img src={urlFor(work.logo).url()} alt={work.altTitle} className="card__image" />
+                                        <p className="card__description">
+                                            {work.description}
+                                        </p>
+                                        <a
+                                            target="_blank"
+                                            alt="Yobin Kumar Pun"
+                                            href={work.url}
+                                            rel="noopener noreferrer"
+                                            className="card__link"
+                                        >
+
+                                            {work.url.replace("https://", "www.")}
+                                        </a>
+                                    </div>
+                                </div>
+                            )
+                        }
+
+                    </div>
+                </div>
             </section>
 
             <footer className="footer">

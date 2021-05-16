@@ -46,6 +46,13 @@ const ContactForm = (props:any) => {
         }
 
         useEffect(() => {
+            const scrollElement = document.getElementById("nav-bar");
+            scrollElement!.scrollIntoView({
+                behavior: "smooth"
+            })
+        }, [])
+
+        useEffect(() => {
             if(success){
                 setTimeout(() => 
                 {
@@ -61,7 +68,7 @@ const ContactForm = (props:any) => {
                 <title>Yobin Kumar Pun | Contact</title>
             </Helmet>
 
-            <nav className="border-bottom">
+            <nav className="border-bottom" id="nav-bar">
                 <div className="container">
                     <div className="head-section no-padding">
                         <Link to="/" >
@@ -121,16 +128,18 @@ const ContactForm = (props:any) => {
 
                         {loading && 
                         <Loader
-                            type="Puff"
+                            type="TailSpin"
                             color="#47A5A5"
-                            height={80}
-                            width={80}
+                            height={70}
+                            width={70}
                         />
                         }
 
                         {
                            !sending && !loading &&
-                        <input className="contact-button pointer-button padding-medium margin-medium" type="submit" />
+                        <button className="contact-button pointer-button padding-medium margin-medium" type="submit" >
+                            Submit
+                        </button>
                         }
 
                         {/* success button when email is sent  */}

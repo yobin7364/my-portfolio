@@ -7,7 +7,6 @@ import designer from "../image/Designer.png";
 import frontEndDevelopment from "../image/Front-end-development.png";
 import backEndDevelopment from "../image/Back-end-development.png";
 import whiteLogo from "../image/White-Logo.png";
-import cephasLogo from "../image/CephasLogo.png";
 import { SocialIcon } from 'react-social-icons';
 import sanityClient from "../client"
 import imageUrlBuilder from "@sanity/image-url"
@@ -34,8 +33,6 @@ export const Home = () => {
             .then((data) => setWorkData(data))
             .catch(console.error)
     }, [])
-
-    console.log("data", workData)
 
 
     return (

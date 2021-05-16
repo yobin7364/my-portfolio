@@ -55,7 +55,7 @@ const ContactForm = (props:any) => {
                 }
                , 3000);
             }
-        }, [success])
+        }, [success,props])
 
     return (
         <div>

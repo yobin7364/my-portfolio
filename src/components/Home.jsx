@@ -17,6 +17,8 @@ function urlFor(source) {
     return builder.image(source)
 }
 
+console.log("key", process.env.REACT_APP_PROJECT_ID)
+
 export const Home = () => {
     const [workData, setWorkData] = useState(null);
     const date = new Date().getFullYear();

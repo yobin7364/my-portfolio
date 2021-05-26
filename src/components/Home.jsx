@@ -277,7 +277,7 @@ export const Home = () => {
                                 rel="noopener noreferrer"
                             />
                             <SocialIcon
-                                url="https://twitter.com/yobin00"
+                                url="https://www.linkedin.com/in/yobin-kumar-pun-411697142/"
                                 className="footer-container__icons"
                                 target="_blank"
                                 fgColor="#fff"
@@ -285,7 +285,7 @@ export const Home = () => {
                                 rel="noopener noreferrer"
                             />
                             <SocialIcon
-                                url="https://www.instagram.com/yobin95/"
+                                url="https://github.com/yobin7364"
                                 className="footer-container__icons"
                                 target="_blank"
                                 fgColor="#fff"

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../image/logo.png";
-import myImage from "../image/my-image.png";
 import hat from "../image/hat.png";
 import designer from "../image/Designer.png";
 import frontEndDevelopment from "../image/Front-end-development.png";
@@ -21,11 +20,20 @@ function urlFor(source) {
 
 export const Home = () => {
     const [workData, setWorkData] = useState(null);
+    const [profileImage, setProfileImage] = useState(null);
+
     const date = new Date().getFullYear();
 
     let years = date - 2018;
 
     useEffect(() => {
+
+        sanityClient.fetch(`*[_type == "author"]{
+            image
+        }`)
+            .then((img) => setProfileImage(img[0]))
+            .catch(console.error)
+
         sanityClient.fetch(`*[_type == "work"]{
             logo,
             description,
@@ -47,7 +55,14 @@ export const Home = () => {
                     <section className="header-info">
                         <h1 className="header-info__title">Designer &amp; Web Developer</h1>
                         <h2 className="header-info__description">I am fond of coding and designing in a simple but convenient way.</h2>
-                        <img src={myImage} alt="Yobin Kumar Pun | Designer &amp; Web Developer" className="my-image" />
+
+                        {
+                            profileImage &&
+
+                            <img loading="eager" src={urlFor(profileImage?.image).url()} alt="Yobin Kumar Pun | Designer &amp; Web Developer" className="my-image" />
+                        }
+
+
                         <img src={hat} alt="Yobin Kumar Pun | Designer &amp; Web Developer" className="hat" />
                     </section>
                 </div>
@@ -58,10 +73,10 @@ export const Home = () => {
                     <div className="introduction__center">
                         <h1 className="introduction__title">
                             Hi, I’m Yobin.Pleasure to meet you.
-                </h1>
+                        </h1>
                         <h2 className="introduction__description">
                             I started my web development journey around {years} years ago . I completed my Bachelor’s Degree in Computer Science and Engineering from Bangalore, India. I have worked with the major software companies of Nepal. I’m quite confident on working with my domain.
-                </h2>
+                        </h2>
                     </div>
                 </div>
             </section>
@@ -74,30 +89,30 @@ export const Home = () => {
                             <div className="domian">
                                 <h1 className="skills__header">
                                     Designer
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     I value simple content
                                     structure , clean design
                                     patterns, and
                                     meaningful interaction.
-                            </h2>
+                                </h2>
                             </div>
 
                             <div className="area">
                                 <h1 className="skills__header-medium">
                                     Things I enjoy designing :
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     UI, Web , Apps , Logos
-                            </h2>
+                                </h2>
                             </div>
 
                             <div className="tolls">
                                 <h1 className="skills__header-medium">
                                     Design Tools :
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     <ul>
@@ -115,29 +130,29 @@ export const Home = () => {
                             <div className="domian">
                                 <h1 className="skills__header">
                                     Front-end Developer
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     I like to code things from scratch,
                                     and enjoy brigning ideas to life in
                                     browser.
-                            </h2>
+                                </h2>
                             </div>
 
                             <div className="area">
                                 <h1 className="skills__header-medium">
                                     Languages I speak :
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     HTML, CSS, SASS, JavaScript
-                            </h2>
+                                </h2>
                             </div>
 
                             <div className="tolls">
                                 <h1 className="skills__header-medium">
                                     Design Tools :
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     <ul>
@@ -160,29 +175,29 @@ export const Home = () => {
                             <div className="domian">
                                 <h1 className="skills__header">
                                     Back-end Developer
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     I structure and manipulate the
                                     datas to deliver it in an efficient
                                     way.
-                            </h2>
+                                </h2>
                             </div>
 
                             <div className="area">
                                 <h1 className="skills__header-medium">
                                     Languages I speak :
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     JavaScript
-                            </h2>
+                                </h2>
                             </div>
 
                             <div className="tolls">
                                 <h1 className="skills__header-medium">
                                     Design Tools :
-                            </h1>
+                                </h1>
 
                                 <h2 className="skills__description">
                                     <ul>

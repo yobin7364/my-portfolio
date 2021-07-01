@@ -246,7 +246,7 @@ export const Home = () => {
                                             className="card__link"
                                         >
 
-                                            {work.url.replace("https://", "www.")}
+                                            Visit
                                         </a>
                                     </div>
                                 </div>

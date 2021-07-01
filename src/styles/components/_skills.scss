@@ -148,6 +148,18 @@ ul {
     font-weight: 600;
     color: $color-primary;
     text-decoration: none;
+
+    padding: 0.2rem 2.2rem;
+    border: 3px solid $color-primary;
+    border-radius: 3.2rem;
+    transition: all 0.7s;
+
+    @media only screen and (min-width: $size-medium-small) {
+      &:hover {
+        color: white;
+        background-color: $color-primary;
+      }
+    }
   }
 }
 

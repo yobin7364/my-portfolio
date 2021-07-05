@@ -134,7 +134,7 @@ export const Home = () => {
 
                                 <h2 className="skills__description">
                                     I like to code things from scratch,
-                                    and enjoy brigning ideas to life in
+                                    and enjoy bringing ideas to life in
                                     browser.
                                 </h2>
                             </div>
@@ -151,7 +151,7 @@ export const Home = () => {
 
                             <div className="tolls">
                                 <h1 className="skills__header-medium">
-                                    Design Tools :
+                                    Dev Tools :
                                 </h1>
 
                                 <h2 className="skills__description">
@@ -196,7 +196,7 @@ export const Home = () => {
 
                             <div className="tolls">
                                 <h1 className="skills__header-medium">
-                                    Design Tools :
+                                    Dev Tools :
                                 </h1>
 
                                 <h2 className="skills__description">

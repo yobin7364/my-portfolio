@@ -145,7 +145,7 @@ export const Home = () => {
                                 </h1>
 
                                 <h2 className="skills__description">
-                                    HTML, CSS, SASS, JavaScript
+                                    HTML, CSS, SASS, JavaScript, TypeScript
                                 </h2>
                             </div>
 
@@ -156,13 +156,11 @@ export const Home = () => {
 
                                 <h2 className="skills__description">
                                     <ul>
-                                        <li>Bootstrap</li>
-                                        <li>Github</li>
-                                        <li>Gitlab</li>
-                                        <li>Terminal</li>
-                                        <li>Code Pen</li>
-                                        <li>PWA</li>
                                         <li>React JS</li>
+                                        <li>Redux</li>
+                                        <ii>Redux Tool Kit</ii>
+                                        <li>Github</li>
+                                        <li>Progressive Web App</li>
                                     </ul>
 
                                 </h2>

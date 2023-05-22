@@ -5,7 +5,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import myImage from "../image/my-image.png";
 import { useForm } from "react-hook-form";
 import { Link, withRouter } from "react-router-dom";
-import {send} from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import apikeys from "../apikeys";
 import { Helmet } from 'react-helmet'
 import Loader from "react-loader-spinner";
@@ -28,20 +28,21 @@ const ContactForm = (props:any) => {
         setLoading(true);
         setSending(true);
 
-        send( apikeys.SERVICE_ID!, apikeys.TEMPLATE_ID!, data, apikeys.USER_ID!)
+        emailjs.sendForm(apikeys.SERVICE_ID!, apikeys.TEMPLATE_ID!, data, apikeys.USER_ID!)
         .then(result => {
-        reset({
-            name:"",
-            email:"",
-            message:""
-        })
-        setLoading(false)
-        setSuccess(true)
-       
-        },
-        error => {
+            reset({
+                name:"",
+                email:"",
+                message:""
+            })
             setLoading(false)
-        })
+            setSuccess(true)
+           
+            },
+            error => {
+                setLoading(false)
+            });
+
 
         }
 
